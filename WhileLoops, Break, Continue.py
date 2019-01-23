@@ -3,7 +3,7 @@
 i = 1
 while 1 >= 5:
     print(i)
-    
+
 i = i + 1
 
 print("Finished")
@@ -23,7 +23,7 @@ print("Done!")
 
 # Continue: ao contrário do break o continue pula de volta ao topo do loop ao invés de parar ele
 
-i = 0 
+i = 0
 
 while True:
     i = i + 1

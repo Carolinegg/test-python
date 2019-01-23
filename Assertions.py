@@ -5,4 +5,3 @@ assert 1 + 1 == 3, "false result"
 
 temp = -10
 assert (temp >= 0), "negative temperature"
-

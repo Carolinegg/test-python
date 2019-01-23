@@ -21,7 +21,7 @@ print(7 >= 8)
 print(1 == 1 and 3 == 3)
 print(1 != 1 and 2 == 2)
 
-# OR leva dois argumentos, se um ou dois argumentos forem verdadeiros -> True e False se os dois forem falsos 
+# OR leva dois argumentos, se um ou dois argumentos forem verdadeiros -> True e False se os dois forem falsos
 
 if (1 == 1 or 2 == 2):
     print("true story")
@@ -29,7 +29,7 @@ if (1 == 1 or 2 == 2):
 if (2 == 1 or 3 > 6):
     print("false story")
 
-# NOT requer apenas um argumento no qual inverte-se: o resultado de not True é False e not False será True 
+# NOT requer apenas um argumento no qual inverte-se: o resultado de not True é False e not False será True
 
 y = not 1 == 1
 print(y)

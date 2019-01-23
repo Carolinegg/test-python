@@ -8,4 +8,3 @@ if num > 5:
     print("\nBigger than 5")
     if num <= 47:
         print("Between 5 and 47")
-

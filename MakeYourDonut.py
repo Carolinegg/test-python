@@ -2,18 +2,22 @@ coberturas = ["chocolate", "calda de morango", "pasta de amendoim"]
 sabores = ["chocolate", "red velvet", "vegano", "normal"]
 escolhas_granulado = ["com", "sem"]
 
+
 def saudar():
     print("Bem vindo ao Carolineas Donuts, qual seria seu pedido?")
+
 
 def mostrar_sabores():
     # tem que mostrar por exemplo "1 - opção"
     for index, sabor in enumerate(sabores):
         print(str(index) + " - " + sabor)
 
+
 def mostrar_coberturas():
     # também mostra exemplos de opções "1 - opção"
     for index, cobertura in enumerate(coberturas):
-        print(str(index) + " - " + cobertura)   
+        print(str(index) + " - " + cobertura)
+
 
 def pedir():
     print("Temos varias opções de sabores, tamanhos, coberturas, com ou sem granulado e quantidade.\n")
@@ -38,11 +42,13 @@ def pedir():
 
     return [sabor, cobertura, tamanho, granulado, quantidade]
 
+
 def pedir_quantidade():
 
     quantidade = ''
     while True:
-        quantidade = input("\nE por último, quantas unidades você gostaria deste donut? (Pode-se encomendar até 50 un) ")
+        quantidade = input(
+            "\nE por último, quantas unidades você gostaria deste donut? (Pode-se encomendar até 50 un) ")
 
         if validar_quantidade(quantidade):
             break
@@ -50,6 +56,7 @@ def pedir_quantidade():
         print("Desculpe mas não possuimos essa quantidade no estoque hoje")
 
     return quantidade
+
 
 def pedir_granulado():
 
@@ -64,6 +71,7 @@ def pedir_granulado():
 
     return granulado
 
+
 def pedir_tamanho():
     print("\nAgora podemos escolher o tamanho, ela varia de 10 a 30 cm.")
 
@@ -75,8 +83,9 @@ def pedir_tamanho():
             break
 
         print("Poderia informar corretamente o tamanho do seu donut novamente por favor? ")
-    
+
     return tamanho
+
 
 def pedir_cobertura():
     mostrar_coberturas()
@@ -92,6 +101,7 @@ def pedir_cobertura():
 
     return cobertura
 
+
 def pedir_sabor():
     mostrar_sabores()
 
@@ -103,8 +113,9 @@ def pedir_sabor():
             break
 
         print("Perdão mas este sabor de massa não temos na loja.")
-    
+
     return sabor
+
 
 def validar_sabor(sabor: str):
     if sabor.lower() in sabores:
@@ -114,6 +125,7 @@ def validar_sabor(sabor: str):
         return True
 
     return False
+
 
 def validar_tamanho(tamanho: str):
     if not tamanho.isdigit():
@@ -126,11 +138,12 @@ def validar_tamanho(tamanho: str):
         return False
 
     if tam > 30:
-        print("Desculpe, mas o tamanho deve ser menor que 30 cm!")    
+        print("Desculpe, mas o tamanho deve ser menor que 30 cm!")
         return False
 
-    return True       
-             
+    return True
+
+
 def validar_cobertura(cobertura):
     if cobertura.lower() in coberturas:
         return True
@@ -140,11 +153,13 @@ def validar_cobertura(cobertura):
 
     return False
 
+
 def validar_granulado(granulado: str):
     if granulado.lower() in escolhas_granulado:
         return True
 
     return False
+
 
 def validar_quantidade(quantidade):
     if not quantidade.isdigit():
@@ -154,8 +169,9 @@ def validar_quantidade(quantidade):
 
     if qnt >= 50:
         return False
-    
+
     return True
+
 
 def mostrar_resultado(pedido):
     sabor = pedido[0]
@@ -164,13 +180,16 @@ def mostrar_resultado(pedido):
     granulado = pedido[3]
     quantidade = pedido[4]
 
-    print(f"Seu donut de {sabor} com cobertura de {cobertura} no tamanho {tamanho} cm, {granulado} granulado e {quantidade} unidades!")
+    print(
+        f"Seu donut de {sabor} com cobertura de {cobertura} no tamanho {tamanho} cm, {granulado} granulado e {quantidade} unidades!")
     print("Obrigada pelo pedido e volte sempre!")
+
 
 def main():
     saudar()
     pedido = pedir()
     mostrar_resultado(pedido)
+
 
 if __name__ == "__main__":
     main()

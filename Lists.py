@@ -13,7 +13,7 @@ print(nums)
 
 # in operator: checa se esta na lista. Se for verdade retorna para True se não existir será False
 
-flavor_pizza = ["egg", "cheese", "pepperoni", "tomato", "oregano"] 
+flavor_pizza = ["egg", "cheese", "pepperoni", "tomato", "oregano"]
 print("egg" in flavor_pizza)
 print("apple" in flavor_pizza)
 
