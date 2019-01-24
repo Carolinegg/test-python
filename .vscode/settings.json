@@ -1,4 +1,4 @@
 {
     "python.linting.enabled": true,
-    "python.pythonPath": "/usr/bin/python3"
+    "python.pythonPath": "/home/carol/.local/share/virtualenvs/teste-python-fLiwwvS1/bin/python"
 }
