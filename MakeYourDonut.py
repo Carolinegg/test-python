@@ -1,171 +1,171 @@
-coberturas = ["chocolate", "calda de morango", "pasta de amendoim"]
-sabores = ["chocolate", "red velvet", "vegano", "normal"]
-escolhas_granulado = ["com", "sem"]
+toppings = ["chocolate", "strawberry sauce", "peanut butter"]
+flavors = ["chocolate", "red velvet", "vegan", "normal"]
+choice_sprinkles = ["with", "without"]
 
 
-def saudar():
-    print("Bem vindo ao Carolineas Donuts, qual seria seu pedido?")
+def greet():
+    print("Hello! Welcome to Carolineas Donuts, what is your order?")
 
 
-def mostrar_sabores():
+def show_flavors():
     # tem que mostrar por exemplo "1 - opção"
-    for index, sabor in enumerate(sabores):
-        print(str(index) + " - " + sabor)
+    for index, flavor in enumerate(flavors):
+        print(str(index) + " - " + flavor)
 
 
-def mostrar_coberturas():
+def show_toppings():
     # também mostra exemplos de opções "1 - opção"
-    for index, cobertura in enumerate(coberturas):
-        print(str(index) + " - " + cobertura)
+    for index, topping in enumerate(toppings):
+        print(str(index) + " - " + topping)
 
 
-def pedir():
-    print("Temos varias opções de sabores, tamanhos, coberturas, com ou sem granulado e quantidade.\n")
+def prompt():
+    print("We have several options of flavors, sizes, toppings, with or without sprinkles and quantity.\n")
     # variavel = expressao_de_func
-    sabor = pedir_sabor()
+    flavor = prompt_flavor()
 
-    print("\nCerto! E a cobertura qual seria? \n")
+    print("\nRight! And what topping would it be? \n")
 
-    cobertura = pedir_cobertura()
+    topping = prompt_toppig()
 
-    tamanho = pedir_tamanho()
+    size = prompt_size()
 
-    print("Ótimo!")
+    print("Great!")
 
-    granulado = pedir_granulado()
+    sprinkles = prompt_sprinkles()
 
-    print("Certo!")
+    print("Okay!")
 
-    quantidade = pedir_quantidade()
+    quantity = prompt_quantity()
 
-    print("Perfeito! Seu pedido está pronto!")
+    print("Perfect. Your order is ready!")
 
-    return [sabor, cobertura, tamanho, granulado, quantidade]
+    return [flavor, topping, size, sprinkles, quantity]
 
 
-def pedir_quantidade():
+def prompt_quantity():
 
-    quantidade = ''
+    quantity = ''
     while True:
-        quantidade = input(
-            "\nE por último, quantas unidades você gostaria deste donut? (Pode-se encomendar até 50 un) ")
+        quantity = input(
+            "\nAnd lastly, how many units would you like for this donut? (You can order up to 50 un). ")
 
-        if validar_quantidade(quantidade):
+        if validate_quantity(quantity):
             break
 
-        print("Desculpe mas não possuimos essa quantidade no estoque hoje")
+        print("Sorry but we do not have this quantity in stock today.")
 
-    return quantidade
+    return quantity
 
 
-def pedir_granulado():
+def prompt_sprinkles():
 
-    granulado = ''
+    sprinkles = ''
     while True:
-        granulado = input("\nE você gostaria com ou sem granulado?  ")
+        sprinkles = input("\nWould you like it with or without sprinkles?  ")
 
-        if validar_granulado(granulado):
+        if validate_sprinkles(sprinkles):
             break
 
-        print("Opção incorreta.")
+        print("Invalid option.")
 
-    return granulado
+    return sprinkles
 
 
-def pedir_tamanho():
-    print("\nAgora podemos escolher o tamanho, ela varia de 10 a 30 cm.")
+def prompt_size():
+    print("\nNow we can choose the size, it varies from 10 to 30 cm.")
 
-    tamanho = ''
+    size = ''
     while True:
-        tamanho = input("\nDe quantos cm seria o tamanho do seu donut? ")
+        size = input("\nHow many centimeters would be the size of your donut?")
 
-        if validar_tamanho(tamanho):
+        if validate_size(size):
             break
 
-        print("Poderia informar corretamente o tamanho do seu donut novamente por favor? ")
+        print("Could you please report the size of your donut correctly again please? ")
 
-    return tamanho
+    return size
 
 
-def pedir_cobertura():
-    mostrar_coberturas()
+def prompt_topping():
+    mostrar_toppings()
 
-    cobertura = ''
+    topping = ''
     while True:
-        cobertura = input("\nDigite o sabor da cobertura: ")
+        topping = input("\nEnter the flavor of the topping: ")
 
-        if validar_cobertura(cobertura):
+        if validate_topping(topping):
             break
 
-        print("Desculpe mas ainda não temos este sabor de cobertura.")
+        print("Sorry but we still do not have this flavor of topping.")
 
-    return cobertura
+    return topping
 
 
-def pedir_sabor():
-    mostrar_sabores()
+def prompt_flavor():
+    show_flavors()
 
-    sabor = ''
+    flavor = ''
     while True:
-        sabor = input("\nQual o sabor da massa: ")
+        flavor = input("\nWhat is the taste of dough? ")
 
-        if validar_sabor(sabor):
+        if validate_flavor(flavor):
             break
 
-        print("Perdão mas este sabor de massa não temos na loja.")
+        print("Sorry but this dough taste we do not have in store.")
 
-    return sabor
+    return flavor
 
 
-def validar_sabor(sabor: str):
-    if sabor.lower() in sabores:
+def validate_flavor(flavor: str):
+    if flavor.lower() in flavors:
         return True
 
-    if sabor.isdigit() and len(sabores) > int(sabor):
+    if flavor.isdigit() and len(flavors) > int(flavor):
         return True
 
     return False
 
 
-def validar_tamanho(tamanho: str):
-    if not tamanho.isdigit():
+def validate_size(size: str):
+    if not size.isdigit():
         return False
 
-    tam = int(tamanho)
+    siz = int(size)
 
-    if tam < 10:
-        print("Desculpe, mas o tamanho deve ser maior que 10 cm!")
+    if siz < 10:
+        print("Sorry, but the size should be larger than 10cm!")
         return False
 
-    if tam > 30:
-        print("Desculpe, mas o tamanho deve ser menor que 30 cm!")
+    if siz > 30:
+        print("Sorry, but the size should be less than 30 cm!")
         return False
 
     return True
 
 
-def validar_cobertura(cobertura):
-    if cobertura.lower() in coberturas:
+def validate_topping(topping):
+    if topping.lower() in toppings:
         return True
 
-    if cobertura.isdigit() and len(coberturas) > int(cobertura):
-        return True
-
-    return False
-
-
-def validar_granulado(granulado: str):
-    if granulado.lower() in escolhas_granulado:
+    if topping.isdigit() and len(toppings) > int(topping):
         return True
 
     return False
 
 
-def validar_quantidade(quantidade):
-    if not quantidade.isdigit():
+def validate_sprinkles(sprinkles: str):
+    if sprinkles.lower() in choice_sprinkles:
+        return True
+
+    return False
+
+
+def validate_quantity(quantity):
+    if not quantity.isdigit():
         return False
 
-    qnt = int(quantidade)
+    qnt = int(quantity)
 
     if qnt >= 50:
         return False
@@ -173,22 +173,22 @@ def validar_quantidade(quantidade):
     return True
 
 
-def mostrar_resultado(pedido):
-    sabor = pedido[0]
-    cobertura = pedido[1]
-    tamanho = pedido[2]
-    granulado = pedido[3]
-    quantidade = pedido[4]
+def show_result(order):
+    flavor = order[0]
+    topping = order[1]
+    size = order[2]
+    sprinkles = order[3]
+    quantity = order[4]
 
     print(
-        f"Seu donut de {sabor} com cobertura de {cobertura} no tamanho {tamanho} cm, {granulado} granulado e {quantidade} unidades!")
-    print("Obrigada pelo pedido e volte sempre!")
+        f"Your donut of {flavor} with topping of {topping} in size {size} cm, {sprinkles} sprinkles and {quantity} units!")
+    print("Thank you for your order and come back!")
 
 
 def main():
-    saudar()
-    pedido = pedir()
-    mostrar_resultado(pedido)
+    greet()
+    order = prompt()
+    show_result(order)
 
 
 if __name__ == "__main__":
