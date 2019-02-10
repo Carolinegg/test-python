@@ -175,13 +175,17 @@ def validate_quantity(quantity):
 
 def show_result(order):
     flavor = order[0]
+    if flavor.isdigit():
+      flavor = flavors[int(flavor)]
     topping = order[1]
+    if topping.isdigit():
+      topping = toppings[int(topping)]
     size = order[2]
     sprinkles = order[3]
     quantity = order[4]
 
     print(
-        "Your donut of {flavor} with topping of {topping} in size {size} cm, {sprinkles} sprinkles and {quantity} units!")
+        f"Your {quantity} units of {flavor} donut with {topping} topping of {size} cm, {sprinkles} sprinkles!")
     print("Thank you for your order and come back!")
 
 
