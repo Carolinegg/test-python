@@ -20,13 +20,13 @@ def show_toppings():
 
 
 def prompt():
-    print("We have several options of flavors, sizes, toppings, with or without sprinkles and quantity.\n")
+    print("We have several options of flavors, sizes, toppings, with or without sprinkles and you choose the quantity too.\n")
     # variavel = expressao_de_func
     flavor = prompt_flavor()
 
-    print("\nRight! And what topping would it be? \n")
+    print("\nRight! And what topping would you want? \n")
 
-    topping = prompt_toppig()
+    topping = prompt_topping()
 
     size = prompt_size()
 
@@ -77,7 +77,7 @@ def prompt_size():
 
     size = ''
     while True:
-        size = input("\nHow many centimeters would be the size of your donut?")
+        size = input("\nHow many centimeters would be the size of your donut? ")
 
         if validate_size(size):
             break
@@ -88,7 +88,7 @@ def prompt_size():
 
 
 def prompt_topping():
-    mostrar_toppings()
+    show_toppings()
 
     topping = ''
     while True:
@@ -181,7 +181,7 @@ def show_result(order):
     quantity = order[4]
 
     print(
-        f"Your donut of {flavor} with topping of {topping} in size {size} cm, {sprinkles} sprinkles and {quantity} units!")
+        "Your donut of {flavor} with topping of {topping} in size {size} cm, {sprinkles} sprinkles and {quantity} units!")
     print("Thank you for your order and come back!")
 
 
